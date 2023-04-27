@@ -10,12 +10,12 @@ const Characters = () => {
 
   return (
     <>
-      <div className="flex bg-black h-80 items-center justify-center ">
+      <div className="flex bg-black h-96 items-center justify-center">
         <h1 className="text-orange-500 hover:text-white text-8xl font-bold">
           Rick And Morty
         </h1>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center ">
         {characters != null
           ? characters.map((character) => (
               <div
