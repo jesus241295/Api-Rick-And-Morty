@@ -6,12 +6,12 @@ const UniqueCharacters = () => {
   const [unique, setUnique] = useState(null);
   useEffect(() => {
     uniqueCharacters(params.id, setUnique);
-  }, []);
+  });
   const params = useParams();
   return (
     <>
       <div className="flex justify-center items-center font-sans w-full h-screen bg-stone-900">
-        {unique != null ? (
+        {unique !== null ? (
           <div className="rounded-xl w-1/3 bg-stone-700 max-w-3xl  ">
             <div className="flex items-center justify-center font-mono text-2xl rounded-t-2xl text-white	bg-orange-500 h-16 font-bold">
               <h2>Personaje con el ID : {params.id}</h2>
@@ -48,7 +48,9 @@ const UniqueCharacters = () => {
             </div>
           </div>
         ) : (
-          "No hay personaje"
+          <div className="flex justify-center items-center font-sans text-6xl font-bold  bg-stone-700 w-full h-screen  text-white">
+            <h3 className="text-orange-500">Sorry, no hay personajes....! </h3>
+          </div>
         )}
       </div>
     </>

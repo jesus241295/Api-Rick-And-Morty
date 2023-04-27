@@ -16,30 +16,34 @@ const Characters = () => {
         </h1>
       </div>
       <div className="flex flex-wrap justify-center ">
-        {characters != null
-          ? characters.map((character) => (
-              <div
-                className="w-72 m-4 bg-stone-700 rounded-xl"
-                key={character.id}
-              >
-                <div className="text-white text-center p-1 font-mono">
-                  <a
-                    className="text-xl hover:text-orange-500 font-bold"
-                    href={`/characters/${character.id}`}
-                  >
-                    {character.name}
-                  </a>
-                </div>
-                <div>
-                  <img
-                    src={character.image}
-                    alt="#"
-                    className="h-64 w-72 rounded-b-xl"
-                  />
-                </div>
+        {characters !== null ? (
+          characters.map((character) => (
+            <div
+              className="w-72 m-4 bg-stone-700 rounded-xl"
+              key={character.id}
+            >
+              <div className="text-white text-center p-1 font-mono">
+                <a
+                  className="text-xl hover:text-orange-500 font-bold"
+                  href={`/characters/${character.id}`}
+                >
+                  {character.name}
+                </a>
               </div>
-            ))
-          : "no hay personajes"}
+              <div>
+                <img
+                  src={character.image}
+                  alt="#"
+                  className="h-64 w-72 rounded-b-xl"
+                />
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="bg-stone-700 w-full h-screen text-center text-6xl font-sans font-bold text-white">
+            Sorry, No Hay Personajes....!
+          </div>
+        )}
       </div>
     </>
   );
