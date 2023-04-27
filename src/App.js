@@ -4,7 +4,7 @@ import UniqueCharacters from "./components/UniqueCharacters/UniqueCharacters";
 
 function App() {
   return (
-    <div className="container">
+    <div className="w-full h-full bg-stone-900">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Characters></Characters>}></Route>
