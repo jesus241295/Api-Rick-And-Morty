@@ -12,7 +12,7 @@ const UniqueCharacters = () => {
     <>
       {unique != null ? (
         <div>
-          <h2>Personaje con el id {params.id}</h2>
+          <h2 className="text-zinc-50">Personaje con el id {params.id}</h2>
           <p>Con el nombre de {unique.name} </p>
           <img src={unique.image} alt="#" />
         </div>
