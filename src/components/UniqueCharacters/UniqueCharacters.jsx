@@ -6,49 +6,47 @@ const UniqueCharacters = () => {
   const [unique, setUnique] = useState(null);
   useEffect(() => {
     uniqueCharacters(params.id, setUnique);
-  }, []);
+  });
   const params = useParams();
   return (
     <>
-      <div className="flex justify-center items-center font-sans w-full h-screen bg-stone-900">
+      <div className="bg-stone-700 w-full h-screen ">
         {unique != null ? (
-          <div className="rounded-xl w-1/3 bg-stone-700 max-w-3xl  ">
-            <div className="flex items-center justify-center font-mono text-2xl rounded-t-2xl text-white	bg-orange-500 h-16 font-bold">
-              <h2>Personaje con el ID : {params.id}</h2>
+          <div className="flex flex-col items-center ">
+            <div className="flex justify-center items-center w-full h-28 font-bold text-2xl mb-10 bg-black text-orange-600 sm:h-48 sm:text-7xl md:h-64 ">
+              <h1 className="hover:text-white">The Rick And Morty</h1>
             </div>
-            <div className="flex justify-between">
-              <div className="w-full p-4 flex flex-col justify-around ">
-                <p className="text-xl font-medium ">
-                  Nombre:{" "}
-                  <span className="text-white font-bold hover:text-orange-500 text-2xl cursor-pointer ">
-                    {unique.name}{" "}
-                  </span>
+            <div className=" grid grid-cols-4 border bg-stone-800 rounded-lg border-gray-500 w-80 h-20 sm:w-2/5 sm:h-40 md:w-1/3 md:h-32 xl:h-36 xl:w-1/3">
+              <div className="flex items-center ">
+                <img
+                  src={unique.image}
+                  alt="#"
+                  className="w-16 mx-1 rounded-full sm:w-32 md:w-32"
+                />
+              </div>
+              <div className=" flex flex-col justify-around col-span-3 pl-1 text-white  md:pl-4">
+                <p className="text-lg font-bold text-orange-600 hover:text-black sm:text-2xl">
+                  {unique.name}
                 </p>
-
-                <p className="text-xl font-medium  ">
+                <p className="font-light  sm:text-xl">
                   Especie:{" "}
-                  <span className="text-white hover:text-orange-500 text-lg cursor-pointer ">
-                    {unique.species}{" "}
+                  <span className="font-bold hover:text-orange-500 sm:text-xl">
+                    {unique.species}
                   </span>
                 </p>
-                <p className="text-xl font-medium ">
-                  Fecha:{" "}
-                  <span className="text-white hover:text-orange-500 text-lg cursor-pointer">
-                    {unique.created}{" "}
-                  </span>
-                </p>
-                <p className="text-xl font-medium ">
+                <p className="font-light sm:text-xl">
                   Genero:{" "}
-                  <span className="text-white hover:text-orange-500 text-lg cursor-pointer">
-                    {unique.gender}{" "}
+                  <span className="font-bold hover:text-orange-500 sm:text-xl">
+                    {unique.gender}
                   </span>
                 </p>
               </div>
-              <img src={unique.image} alt="#" className="rounded-b-2xl" />
             </div>
           </div>
         ) : (
-          "No hay personaje"
+          <div className=" flex w-full h-1/4  justify-center items-center text-orange-500 text-lg font-sans font-bold sm:text-xl md:text-3xl">
+            ¡Sorry. No hay personajes...!
+          </div>
         )}
       </div>
     </>
