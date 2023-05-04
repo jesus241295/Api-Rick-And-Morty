@@ -3,10 +3,11 @@ import { fullCharacters } from "../../services/service";
 
 const Characters = () => {
   const [characters, setCharacters] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fullCharacters(setCharacters);
-  });
+  }, []);
 
   return (
     <>
@@ -24,10 +25,10 @@ const Characters = () => {
                 <div className="flex items-center col-span-1 h-24 pl-1">
                   <img src={character.image} alt="#" className="rounded-full" />
                 </div>
-                <div className="flex items-center col-span-3 pl-3 text-xl text-orange-500 font-bold font-sans ">
+                <div className="flex items-center col-span-3 pl-3 text-xl text-white  font-bold font-sans ">
                   <a
                     href={`/characters/${character.id}`}
-                    className="hover:text-white"
+                    className="hover:text-orange-500"
                   >
                     {character.name}
                   </a>
